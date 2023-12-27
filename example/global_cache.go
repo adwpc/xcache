@@ -6,6 +6,7 @@ import (
 	"github.com/adwpc/xcache"
 )
 
+// this is a global cache, minimum usage example
 func main() {
 	// xcache.Init(time.Hour*12) // not nessary, will be called automatically(expire is 1 Hour)
 	xcache.Set("a", "b")
