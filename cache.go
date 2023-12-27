@@ -11,6 +11,7 @@ import (
 )
 
 var (
+	// cache is a global cache
 	cache *bigcache.BigCache
 )
 
