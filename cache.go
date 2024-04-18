@@ -42,6 +42,14 @@ func set[X, Y any](c *bigcache.BigCache, key X, value Y) {
 	c.Set(fmt.Sprintf("%v", key), toBytes(value))
 }
 
+func del[X any](c *bigcache.BigCache, key X) {
+	if c == nil {
+		return
+	}
+
+	c.Delete(fmt.Sprintf("%v", key))
+}
+
 func get[X, Y any](c *bigcache.BigCache, key X) Y {
 	var value Y
 	if c == nil {
@@ -68,4 +76,8 @@ func Get[X, Y any](key X) Y {
 
 func Set[X, Y any](key X, value Y) {
 	set(cache, key, value)
+}
+
+func Del[X any](key X) {
+	del(cache, key)
 }

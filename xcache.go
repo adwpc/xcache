@@ -31,3 +31,7 @@ func XGet[X, Y any](xc *XCache, key X) Y {
 func XSet[X, Y any](xc *XCache, key X, value Y) {
 	set(xc.cache, key, value)
 }
+
+func XDel[X any](xc *XCache, key X) {
+	del(xc.cache, key)
+}
