@@ -59,7 +59,6 @@ func get[X, Y any](c *bigcache.BigCache, key X) Y {
 
 	bytes, err := c.Get(fmt.Sprintf("%v", key))
 	if err != nil {
-		fmt.Printf("cache get err:%v key:%v\n", err, key)
 		return value
 	}
 
