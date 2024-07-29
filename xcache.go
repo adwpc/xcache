@@ -24,6 +24,12 @@ func New(config bigcache.Config) *XCache {
 	}
 }
 
+func Close(xc *XCache) {
+	if xc != nil {
+		xc.cache.Close()
+	}
+}
+
 func XGet[X, Y any](xc *XCache, key X) Y {
 	return get[X, Y](xc.cache, key) //cannot infer Y
 }
