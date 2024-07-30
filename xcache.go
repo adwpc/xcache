@@ -25,7 +25,7 @@ func New(config bigcache.Config) *XCache {
 }
 
 func Close(xc *XCache) {
-	if xc != nil {
+	if xc != nil && xc.cache != nil {
 		xc.cache.Close()
 	}
 }
